@@ -1,0 +1,29 @@
+{
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/submit",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/health/full",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/debug",
+      "dest": "/api/index"
+    }
+  ]
+}
