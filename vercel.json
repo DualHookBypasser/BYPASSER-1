@@ -1,29 +1,26 @@
 {
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.9"
-    }
-  },
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/submit",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/health",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/health/full",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/debug",
-      "dest": "/api/index"
-    }
-  ]
+"version": 2,
+"builds": [
+{
+"src": "app.py",
+"use": "@vercel/python",
+"config": {
+"maxLambdaSize": "15mb"
+}
+}
+],
+"routes": [
+{
+"src": "/(.*)",
+"dest": "app.py"
+}
+],
+"env": {
+"PYTHONPATH": "."
+},
+"functions": {
+"app.py": {
+"memory": 1024
+}
+}
 }
